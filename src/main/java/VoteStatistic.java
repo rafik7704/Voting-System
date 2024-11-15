@@ -28,7 +28,10 @@ public class VoteStatistic extends JFrame {
 
             String imagePath = candidate.getString("image");
             System.out.println(imagePath);
-            ImageIcon candidateImage = new ImageIcon("resources/images/" + imagePath);
+            ImageIcon originalImage = new ImageIcon("resources/images/" + imagePath);
+            Image scaledImage = originalImage.getImage().getScaledInstance(150, 160, Image.SCALE_SMOOTH);
+            ImageIcon candidateImage = new ImageIcon(scaledImage);
+
             JLabel candidateLabel = new JLabel(candidateImage);
             candidateLabel.setBounds(30, 20 + (i * 170), 150, 160);
             panel.add(candidateLabel);
