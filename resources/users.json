@@ -1,0 +1,20 @@
+{"users": [
+    {
+        "password": "1234",
+        "roles": "STAFF",
+        "fullName": "rafik",
+        "id": "rafik"
+    },
+    {
+        "password": "1234",
+        "roles": "STUDENT",
+        "fullName": "azlan",
+        "id": "azlan"
+    },
+    {
+        "password": "1234",
+        "roles": "student",
+        "fullName": "RAFIKAZLAN",
+        "id": "SWE22"
+    }
+]}
