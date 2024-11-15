@@ -138,7 +138,7 @@ public class RegisterStudent extends JFrame {
         userJson.put("id", id);
         userJson.put("fullName", fullName);
         userJson.put("password", password);
-        userJson.put("roles", "student");
+        userJson.put("roles", "STUDENT");
         return userJson;
     }
 
@@ -191,9 +191,5 @@ public class RegisterStudent extends JFrame {
             return false;
         }
 
-    }
-
-    public static void main(String[] args) {
-        new RegisterStudent("rafik");
     }
 }

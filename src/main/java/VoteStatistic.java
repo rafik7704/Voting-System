@@ -8,7 +8,13 @@ import java.io.IOException;
 
 public class VoteStatistic extends JFrame {
 
-    VoteStatistic() {
+    private JButton homeButton;
+    VoteStatistic(String fullName) {
+        try {
+            UIManager.setLookAndFeel(UIManager.getCrossPlatformLookAndFeelClassName());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
         this.setTitle("Voting System");
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setSize(800, 800);
@@ -27,7 +33,6 @@ public class VoteStatistic extends JFrame {
             JSONObject candidate = candidates.getJSONObject(i);
 
             String imagePath = candidate.getString("image");
-            System.out.println(imagePath);
             ImageIcon originalImage = new ImageIcon("resources/images/" + imagePath);
             Image scaledImage = originalImage.getImage().getScaledInstance(150, 160, Image.SCALE_SMOOTH);
             ImageIcon candidateImage = new ImageIcon(scaledImage);
@@ -92,12 +97,36 @@ public class VoteStatistic extends JFrame {
         scrollPane.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
         this.add(scrollPane, BorderLayout.CENTER);
 
+        homeButton(fullName);
+
         this.setVisible(true);
+    }
+
+    private void homeButton(String fullName) {
+
+        homeButton = new JButton("Home");
+        homeButton.setFont(new Font("Work Sans", Font.BOLD, 16));
+        homeButton.setBackground(new Color(0x0E2A45));
+        homeButton.setForeground(Color.WHITE);
+        homeButton.setPreferredSize(new Dimension(120, 40));
+        homeButton.setFocusable(false);
+
+        JPanel homePanel = new JPanel(new FlowLayout(FlowLayout.CENTER, 0, 20));
+        homePanel.setBackground(new Color(0x123456));
+        homePanel.add(homeButton);
+
+        homeButton.addActionListener(e -> goHome(fullName));
+
+        this.add(homePanel, BorderLayout.SOUTH);
+    }
+
+    private void goHome(String fullName) {
+        this.dispose();
+        new AdminDashboard(fullName);
     }
 
     private JSONArray loadCandidatesData() {
         try {
-
             String content = new String(Files.readAllBytes(Paths.get("resources/candidates.json")));
             JSONObject jsonObject = new JSONObject(content);
             return jsonObject.getJSONArray("candidates");
@@ -108,6 +137,6 @@ public class VoteStatistic extends JFrame {
     }
 
     public static void main(String[] args) {
-        new VoteStatistic();
+        new VoteStatistic("rafik");
     }
 }

@@ -41,14 +41,13 @@ public class AdminDashboard extends JFrame {
 
         JButton registerStudentButton = createButton("Register Student");
         registerStudentButton.addActionListener(e -> {
-
             new RegisterStudent(fullName);
             dispose();
         });
 
         JButton voteStatisticsButton = createButton("Vote Statistics");
         voteStatisticsButton.addActionListener(e -> {
-            new VoteStatistic();
+            new VoteStatistic(fullName);
             dispose();
         });
 
@@ -57,8 +56,20 @@ public class AdminDashboard extends JFrame {
         buttonPanel.add(voteStatisticsButton);
 
         panel.add(buttonPanel);
-
         panel.add(Box.createVerticalGlue());
+
+        JPanel logoutPanel = new JPanel();
+        logoutPanel.setLayout(new FlowLayout(FlowLayout.CENTER));
+        logoutPanel.setBackground(new Color(0x0E2A45));
+
+        JButton logoutButton = createButton("Logout");
+        logoutButton.addActionListener(e -> {
+            new Login();
+            dispose();
+        });
+
+        logoutPanel.add(logoutButton);
+        panel.add(logoutPanel);
 
         this.setTitle("Admin Dashboard");
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -89,5 +100,4 @@ public class AdminDashboard extends JFrame {
 
         return button;
     }
-
 }

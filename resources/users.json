@@ -10,11 +10,5 @@
         "roles": "STUDENT",
         "fullName": "azlan",
         "id": "azlan"
-    },
-    {
-        "password": "1234",
-        "roles": "student",
-        "fullName": "RAFIKAZLAN",
-        "id": "SWE22"
     }
 ]}

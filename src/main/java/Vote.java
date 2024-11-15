@@ -64,7 +64,6 @@ public class Vote extends JFrame {
 
         JPanel panel = new JPanel();
         panel.setBackground(new Color(0x0E2A45));
-        panel.setBounds(80, 210, 640, 260);
         panel.setLayout(new GridBagLayout());
         GridBagConstraints gbc = new GridBagConstraints();
         gbc.insets = new Insets(10, 10, 10, 10);
@@ -101,7 +100,9 @@ public class Vote extends JFrame {
             gridY++;
         }
 
-        this.add(panel);
+        JScrollPane scrollPane = new JScrollPane(panel);
+        scrollPane.setBounds(80, 210, 640, 300);
+        this.add(scrollPane);
 
         JLabel text = new JLabel("PLEASE CHOOSE YOUR CANDIDATE");
         text.setForeground(Color.WHITE);
@@ -136,6 +137,8 @@ public class Vote extends JFrame {
                     break;
                 }
             }
+            this.dispose();
+            new Login();
         } else {
             JOptionPane.showMessageDialog(this, "Please select a candidate!", "Error", JOptionPane.ERROR_MESSAGE);
         }
@@ -154,7 +157,7 @@ public class Vote extends JFrame {
 
     private void saveUpdatedVotes() {
         try {
-            File jsonFile = new File("/Users/rafikazlan/IdeaProjects/Voting System/resources/candidates.json");
+            File jsonFile = new File("resources/candidates.json");
             JSONObject jsonObject = new JSONObject();
             jsonObject.put("candidates", candidates);
 

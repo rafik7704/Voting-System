@@ -182,6 +182,7 @@ public class RegisterCandidate extends JFrame {
         JSONObject candidate = new JSONObject();
         candidate.put("name", name);
         candidate.put("image", imageName);
+        candidate.put("votes",0);
 
         candidatesArray.put(candidate);
 
@@ -193,9 +194,5 @@ public class RegisterCandidate extends JFrame {
         } catch (IOException e) {
             e.printStackTrace();
         }
-    }
-
-    public static void main(String[] args) {
-        new RegisterCandidate("Admin");
     }
 }

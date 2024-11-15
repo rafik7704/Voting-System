@@ -1,12 +1,17 @@
 {"candidates": [
     {
-        "image": "shah.png",
-        "name": "Shah",
-        "votes": 2
+        "image": "frank_ocean.png",
+        "name": "Frank Ocean",
+        "votes": 4
     },
     {
-        "image": "rafikazlan.png",
-        "name": "RafikAzlan",
-        "votes": 0
+        "image": "cakra_khan.png",
+        "name": "Cakra Khan",
+        "votes": 4
+    },
+    {
+        "image": "jung_kook.png",
+        "name": "Jung Kook",
+        "votes": 4
     }
 ]}
