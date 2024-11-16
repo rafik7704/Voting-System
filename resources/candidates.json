@@ -12,6 +12,11 @@
     {
         "image": "jung_kook.png",
         "name": "Jung Kook",
-        "votes": 4
+        "votes": 5
+    },
+    {
+        "image": "harraz.png",
+        "name": "Harraz",
+        "votes": 3
     }
 ]}

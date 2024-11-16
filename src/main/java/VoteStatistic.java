@@ -15,6 +15,8 @@ public class VoteStatistic extends JFrame {
         } catch (Exception e) {
             e.printStackTrace();
         }
+
+        //Title
         this.setTitle("Voting System");
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setSize(800, 800);
@@ -29,6 +31,7 @@ public class VoteStatistic extends JFrame {
 
         JSONArray candidates = loadCandidatesData();
 
+        // Candidate Looping
         for (int i = 0; i < candidates.length(); i++) {
             JSONObject candidate = candidates.getJSONObject(i);
 
@@ -69,6 +72,7 @@ public class VoteStatistic extends JFrame {
         JLabel label = new JLabel(voteImage);
         label.setHorizontalAlignment(JLabel.CENTER);
 
+        //Line Seperator
         JSeparator separatorResult = new JSeparator();
         separatorResult.setOrientation(SwingConstants.VERTICAL);
         separatorResult.setBackground(Color.WHITE);
@@ -102,6 +106,7 @@ public class VoteStatistic extends JFrame {
         this.setVisible(true);
     }
 
+    //Home Button
     private void homeButton(String fullName) {
 
         homeButton = new JButton("Home");
@@ -125,6 +130,7 @@ public class VoteStatistic extends JFrame {
         new AdminDashboard(fullName);
     }
 
+    // Load Candidates
     private JSONArray loadCandidatesData() {
         try {
             String content = new String(Files.readAllBytes(Paths.get("resources/candidates.json")));
@@ -134,9 +140,5 @@ public class VoteStatistic extends JFrame {
             e.printStackTrace();
             return new JSONArray();
         }
-    }
-
-    public static void main(String[] args) {
-        new VoteStatistic("rafik");
     }
 }

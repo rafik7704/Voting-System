@@ -31,6 +31,7 @@ public class RegisterCandidate extends JFrame {
         this.getContentPane().setBackground(new Color(0x123456));
         this.setLayout(null);
 
+        //Title Label
         JLabel titleLabel = new JLabel("CANDIDATE REGISTRATION", SwingConstants.CENTER);
         titleLabel.setForeground(Color.WHITE);
         titleLabel.setFont(new Font("Work Sans", Font.BOLD, 18));
@@ -107,6 +108,7 @@ public class RegisterCandidate extends JFrame {
         this.setVisible(true);
     }
 
+    // File Chooser
     private void openFileChooser() {
         JFileChooser fileChooser = new JFileChooser();
         fileChooser.setDialogTitle("Select Candidate Image");
@@ -122,6 +124,7 @@ public class RegisterCandidate extends JFrame {
         }
     }
 
+    //Register Candidate
     private void registerCandidate(String fullName) {
         String name = nameField.getText();
         String imagePath = imageField.getText();
@@ -156,6 +159,7 @@ public class RegisterCandidate extends JFrame {
         }
     }
 
+    //Save Candidate Info
     private void saveCandidateInfo(String name, String imageName) {
         File jsonFile = new File("resources/candidates.json");
 

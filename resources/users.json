@@ -10,5 +10,11 @@
         "roles": "STUDENT",
         "fullName": "azlan",
         "id": "azlan"
+    },
+    {
+        "password": "1234",
+        "roles": "STUDENT",
+        "fullName": "Harraz",
+        "id": "SWE123"
     }
 ]}

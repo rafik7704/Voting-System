@@ -18,6 +18,7 @@ public class Login extends JFrame {
         panel.setPreferredSize(new Dimension(50, 50));
         panel.setLayout(null);
 
+        //ID Label
         JLabel idLabel = new JLabel("ID");
         idLabel.setForeground(Color.WHITE);
         idLabel.setFont(new Font("Work Sans", Font.BOLD, 20));
@@ -35,12 +36,15 @@ public class Login extends JFrame {
         idField.setCaretColor(Color.BLACK);
         panel.add(idField);
 
+        //Password Label
         JLabel passwordLabel = new JLabel("Password");
         passwordLabel.setForeground(Color.WHITE);
         passwordLabel.setFont(new Font("Work Sans", Font.BOLD, 20));
         passwordLabel.setBounds(100, 270, 100, 30);
         panel.add(passwordLabel);
 
+
+        //Password Field
         JPasswordField passwordField = new JPasswordField();
         passwordField.setBounds(100, 310, 450, 30);
         passwordField.setBackground(Color.WHITE);
@@ -61,6 +65,8 @@ public class Login extends JFrame {
         submitButton.addActionListener(e -> authenticateUser(idField.getText(), new String(passwordField.getPassword()), this));
         panel.add(submitButton);
 
+
+        //Exit Button
         JButton exitButton = new JButton("Exit");
         exitButton.setForeground(Color.WHITE);
         exitButton.setFont(new Font("Work Sans", Font.BOLD, 20));
@@ -103,6 +109,7 @@ public class Login extends JFrame {
         this.setVisible(true);
     }
 
+    //Authenticate User
     private void authenticateUser(String userId, String password, JFrame loginFrame) {
         try {
             String filePath = "resources/users.json";

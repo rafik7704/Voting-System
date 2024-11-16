@@ -15,11 +15,13 @@ public class AdminDashboard extends JFrame {
         panel.setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS));
         panel.setPreferredSize(new Dimension(600, 600));
 
+        //Admin Dashboard Title
         JLabel titleLabel = new JLabel("Admin Dashboard");
         titleLabel.setForeground(Color.WHITE);
         titleLabel.setFont(new Font("Segoe UI", Font.BOLD, 32));
         titleLabel.setAlignmentX(Component.CENTER_ALIGNMENT);
 
+        //Welcome Screen
         JLabel welcomeLabel = new JLabel("Welcome, " + fullName);
         welcomeLabel.setForeground(Color.WHITE);
         welcomeLabel.setFont(new Font("Segoe UI", Font.BOLD, 24));
@@ -33,6 +35,8 @@ public class AdminDashboard extends JFrame {
         buttonPanel.setLayout(new FlowLayout(FlowLayout.CENTER, 20, 20));
         buttonPanel.setBackground(new Color(0x0E2A45));
 
+
+        // Register Candidate Action
         JButton registerCandidateButton = createButton("Register Candidate");
         registerCandidateButton.addActionListener(e -> {
             new RegisterCandidate(fullName);
@@ -87,6 +91,7 @@ public class AdminDashboard extends JFrame {
         this.setVisible(true);
     }
 
+    // Create Button
     private JButton createButton(String text) {
         JButton button = new JButton(text);
         button.setFont(new Font("Segoe UI", Font.PLAIN, 18));

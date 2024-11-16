@@ -37,6 +37,7 @@ public class Vote extends JFrame {
         this.setIconImage(iconImage.getImage());
     }
 
+    //Retrieve Candidate
     private void loadCandidates() {
         try {
             File jsonFile = new File("resources/candidates.json");
@@ -111,6 +112,7 @@ public class Vote extends JFrame {
         this.add(text);
     }
 
+    //Submit Button
     private void setupSubmitButton() {
         submitButton = new JButton("Submit");
         submitButton.setFont(new Font("Work Sans", Font.PLAIN, 12));
@@ -122,6 +124,7 @@ public class Vote extends JFrame {
         this.add(submitButton);
     }
 
+    // Submit Vote Logic
     private void submitVote() {
         JRadioButton selectedButton = getSelectedButton();
         if (selectedButton != null) {
@@ -155,6 +158,7 @@ public class Vote extends JFrame {
         return null;
     }
 
+    // Save updated Voted
     private void saveUpdatedVotes() {
         try {
             File jsonFile = new File("resources/candidates.json");

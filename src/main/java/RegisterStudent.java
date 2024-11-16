@@ -24,6 +24,7 @@ public class RegisterStudent extends JFrame {
         GridBagConstraints gbc = new GridBagConstraints();
         gbc.insets = new Insets(10, 10, 10, 10);
 
+        //Title Label
         JLabel titleLabel = new JLabel("Register Student Account");
         titleLabel.setForeground(Color.WHITE);
         titleLabel.setFont(new Font("Segoe UI", Font.BOLD, 32));
@@ -82,6 +83,7 @@ public class RegisterStudent extends JFrame {
         gbc.gridy = 4;
         panel.add(confirmPasswordField, gbc);
 
+        //Register Button
         JButton registerButton = new JButton("Register");
         registerButton.setFont(new Font("Segoe UI", Font.PLAIN, 18));
         registerButton.setForeground(Color.WHITE);
@@ -102,6 +104,7 @@ public class RegisterStudent extends JFrame {
         this.getContentPane().setBackground(new Color(0x0E2A45));
         this.add(panel, BorderLayout.CENTER);
 
+        // Register Button
         registerButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -133,6 +136,7 @@ public class RegisterStudent extends JFrame {
         this.setVisible(true);
     }
 
+    //Create User JSON
     private JSONObject createUserJson(String id, String fullName, String password) {
         JSONObject userJson = new JSONObject();
         userJson.put("id", id);
@@ -142,6 +146,7 @@ public class RegisterStudent extends JFrame {
         return userJson;
     }
 
+    //Update JSON user
     private boolean updateUsersJson(User newUser) {
         try {
 
